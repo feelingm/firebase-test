@@ -1,5 +1,7 @@
 package com.feelingm.firebasetest.di
 
+import com.feelingm.firebasetest.MainActivity
+import com.feelingm.firebasetest.MainActivityFragment
 import com.feelingm.firebasetest.ui.auth.GoogleSignInFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -11,6 +13,12 @@ import dagger.android.ContributesAndroidInjector
 @Module
 abstract class ActivityBinder {
 
-    @ContributesAndroidInjector(modules = [])
+    @ContributesAndroidInjector
+    abstract fun bindMainActivity(): MainActivity
+
+    @ContributesAndroidInjector
+    abstract fun bindMainFragment(): MainActivityFragment
+
+    @ContributesAndroidInjector
     abstract fun bindGoogleSignInFragment(): GoogleSignInFragment
 }

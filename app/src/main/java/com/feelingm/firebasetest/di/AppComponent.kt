@@ -17,7 +17,8 @@ import javax.inject.Singleton
         modules = [
         ActivityBinder::class,
         AppModule::class,
-        AndroidInjectionModule::class
+        AndroidInjectionModule::class,
+        NavigationModule::class
         ])
 interface AppComponent : AndroidInjector<FirebaseTestApp> {
 

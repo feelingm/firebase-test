@@ -37,7 +37,7 @@ class NavigationManager {
 
     fun popAll() {
         fragmentManager.run {
-            for (i in 0..backStackEntryCount) {
+            for (i in 0 until backStackEntryCount) {
                 popBackStack(getBackStackEntryAt(i).id, FragmentManager.POP_BACK_STACK_INCLUSIVE)
             }
         }

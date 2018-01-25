@@ -10,8 +10,8 @@ import com.google.firebase.auth.FirebaseAuth
  * Created by mac on 2018. 1. 23..
  */
 
-class GoogleSignInViewModelFactory(val firebaseAuth: FirebaseAuth,
-                                   val googleSignInClient: GoogleSignInClient,
+class GoogleSignInViewModelFactory(private val firebaseAuth: FirebaseAuth,
+                                   private val googleSignInClient: GoogleSignInClient,
                                    val application: Application)
     : ViewModelProvider.Factory {
 

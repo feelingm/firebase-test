@@ -18,25 +18,25 @@ class NavigationManager {
 
     private lateinit var fragmentManager: FragmentManager
 
-    private var navigationListener: NavigationListener? = null
+    var navigationListener: NavigationListener? = null
 
     fun init(fragmentManager: FragmentManager) {
         this.fragmentManager = fragmentManager
 
-        fragmentManager?.addOnBackStackChangedListener {
+        fragmentManager.addOnBackStackChangedListener {
             navigationListener?.onBackstackChanged()
         }
     }
 
     fun open(fragment: Fragment) {
-        fragmentManager?.beginTransaction()
+        fragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, fragment)
                 .addToBackStack(fragment.toString())
                 .commit()
     }
 
     fun popAll() {
-        fragmentManager?.run {
+        fragmentManager.run {
             for (i in 0..backStackEntryCount) {
                 popBackStack(getBackStackEntryAt(i).id, FragmentManager.POP_BACK_STACK_INCLUSIVE)
             }
@@ -49,7 +49,7 @@ class NavigationManager {
     }
 
     fun navigateBack(activity: AppCompatActivity) {
-        fragmentManager?.run {
+        fragmentManager.run {
             if (backStackEntryCount == 0) {
                 activity.finish()
             } else {
@@ -58,6 +58,8 @@ class NavigationManager {
         }
     }
 
-    fun isRootFragmentVisible() = fragmentManager?.backStackEntryCount <= 1
+    fun isRootFragmentVisible() = fragmentManager.backStackEntryCount <= 1
+
+
 
 }

@@ -1,19 +1,35 @@
 package com.feelingm.firebasetest.ui.auth
 
+import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.feelingm.firebasetest.R
+import com.feelingm.firebasetest.util.base.BaseFragment
+import javax.inject.Inject
 
-/**
- * A placeholder fragment containing a simple view.
- */
-class GoogleSignInFragment : Fragment() {
+class GoogleSignInFragment : BaseFragment() {
+
+    companion object {
+        fun newInstance() = GoogleSignInFragment()
+    }
+
+    @Inject lateinit var viewModelFactory: GoogleSignInViewModelFactory
+
+    lateinit var viewModel: GoogleSignInViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_main, container, false)
+        return inflater.inflate(R.layout.fragment_google_sign_in, container, false)
+    }
+
+    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        viewModel = ViewModelProviders.of(this, viewModelFactory)[GoogleSignInViewModel::class.java]
+
+
+
     }
 }

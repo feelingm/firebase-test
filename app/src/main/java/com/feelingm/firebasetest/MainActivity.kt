@@ -5,15 +5,22 @@ import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import com.feelingm.firebasetest.ui.auth.GoogleSignInFragment
+import com.feelingm.firebasetest.util.base.BaseActivity
+import com.feelingm.firebasetest.util.navigation.NavigationManager
 
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity(), NavigationManager.NavigationListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
+
+        navigationManager.init(supportFragmentManager)
+        navigationManager.navigationListener = this
+
+        navigationManager.openAsRoot(GoogleSignInFragment.newInstance())
 
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -35,5 +42,20 @@ class MainActivity : AppCompatActivity() {
             R.id.action_settings -> true
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+
+        if (supportFragmentManager.backStackEntryCount == 1) {
+//            showExitDialog();
+        } else {
+            navigationManager.navigateBack(this)
+        }
+    }
+
+    override fun onBackstackChanged() {
+//        drawerManager.enableDrawer(navigationManager.isRootFragmentVisible)
+//        drawerManager.enableActionBarDrawerToggle(navigationManager.isRootFragmentVisible)
     }
 }

@@ -4,16 +4,15 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.FrameLayout
 import com.feelingm.firebasetest.util.navigation.NavigationManager
+import dagger.android.support.DaggerAppCompatActivity
+import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
 /**
  * Created by mac on 2018. 1. 24..
  */
 
-abstract class BaseActivity : AppCompatActivity() {
-
-
-    internal lateinit var contentLayout: FrameLayout
+abstract class BaseActivity : DaggerAppCompatActivity() {
 
     @Inject
     internal lateinit var navigationManager: NavigationManager
@@ -21,6 +20,16 @@ abstract class BaseActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        setSupportActionBar(toolbar)
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        navigationManager.navigateBack(this)
+    }
+
+    protected fun setToolbarVisibility(visibility: Int) {
+        toolbar.visibility = visibility
+    }
 }

@@ -15,7 +15,7 @@ import javax.inject.Singleton
 class AppModule {
 
     @Provides
-    @Named("appContext")
+//    @Named("appContext")
     @Singleton
     fun provideContext(application: Application): Context = application.applicationContext
 

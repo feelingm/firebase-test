@@ -18,6 +18,7 @@ import javax.inject.Singleton
         ActivityBinder::class,
         AppModule::class,
         AndroidInjectionModule::class,
+        FirebaseAuthModule::class,
         NavigationModule::class
         ])
 interface AppComponent : AndroidInjector<FirebaseTestApp> {

@@ -1,4 +1,4 @@
-package com.androidhuman.example.simplegithub.extensions
+package com.feelingm.firebasetest.util.extensions
 
 import com.androidhuman.example.simplegithub.rx.AutoClearedDisposable
 import io.reactivex.Completable

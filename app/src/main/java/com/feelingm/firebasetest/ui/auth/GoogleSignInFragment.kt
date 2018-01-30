@@ -2,9 +2,11 @@ package com.feelingm.firebasetest.ui.auth
 
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.androidhuman.example.simplegithub.rx.AutoClearedDisposable
 import com.feelingm.firebasetest.R
 import com.feelingm.firebasetest.util.base.BaseFragment
 import javax.inject.Inject

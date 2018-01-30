@@ -21,7 +21,6 @@ open class BaseFragment : DaggerFragment() {
         AutoClearedDisposable(activity as BaseActivity, alwaysClearOnStop = false)
     }
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         lifecycle += disposables

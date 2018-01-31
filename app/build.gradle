@@ -34,6 +34,11 @@ ext {
 }
 
 android {
+
+    dataBinding {
+        enabled = true
+    }
+
     signingConfigs {
         config {
             keyAlias 'test'

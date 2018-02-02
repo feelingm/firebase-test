@@ -1,12 +1,12 @@
-package com.feelingm.firebasetest
+package com.feelingm.firebasetest.ui.main
 
 import android.os.Bundle
 import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import com.feelingm.firebasetest.R
 import com.feelingm.firebasetest.ui.auth.GoogleSignInFragment
-import com.feelingm.firebasetest.util.base.BaseActivity
+import com.feelingm.firebasetest.util.component.BaseActivity
 import com.feelingm.firebasetest.util.navigation.NavigationManager
 
 import kotlinx.android.synthetic.main.activity_main.*

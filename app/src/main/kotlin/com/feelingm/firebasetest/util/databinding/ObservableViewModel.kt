@@ -10,8 +10,8 @@ import android.databinding.PropertyChangeRegistry
  * Created by mac on 2018. 1. 31..
  */
 
-open class BaseViewModelObservable(application: Application)
-        : AndroidViewModel(application), Observable {
+abstract class ObservableViewModel(val app: Application)
+        : AndroidViewModel(app), Observable {
 
     @Transient
     private var mCallbacks: PropertyChangeRegistry? = null

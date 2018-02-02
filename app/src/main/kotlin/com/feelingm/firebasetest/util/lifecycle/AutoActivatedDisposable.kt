@@ -1,4 +1,4 @@
-package com.androidhuman.example.simplegithub.rx
+package com.feelingm.firebasetest.util.lifecycle
 
 import android.arch.lifecycle.Lifecycle
 import android.arch.lifecycle.LifecycleObserver

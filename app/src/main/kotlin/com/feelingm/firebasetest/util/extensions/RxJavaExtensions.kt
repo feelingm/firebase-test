@@ -1,6 +1,6 @@
 package com.feelingm.firebasetest.util.extensions
 
-import com.androidhuman.example.simplegithub.rx.AutoClearedDisposable
+import com.feelingm.firebasetest.util.lifecycle.AutoClearedDisposable
 import io.reactivex.Completable
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers

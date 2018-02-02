@@ -1,10 +1,11 @@
-package com.feelingm.firebasetest
+package com.feelingm.firebasetest.ui.main
 
 import android.support.v4.app.Fragment
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.feelingm.firebasetest.R
 
 /**
  * A placeholder fragment containing a simple view.

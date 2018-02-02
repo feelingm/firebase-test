@@ -1,5 +1,6 @@
 package com.feelingm.firebasetest.util.navigation
 
+import android.support.v4.app.DialogFragment
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v7.app.AppCompatActivity
@@ -47,6 +48,9 @@ class NavigationManager {
         popAll()
         open(fragment)
     }
+
+    fun show(dialogFragment: DialogFragment) =
+        dialogFragment.show(fragmentManager, dialogFragment.tag)
 
     fun navigateBack(activity: AppCompatActivity) {
         fragmentManager.run {

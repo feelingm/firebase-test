@@ -1,8 +1,6 @@
-package com.feelingm.firebasetest.util.base
+package com.feelingm.firebasetest.util.component
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.widget.FrameLayout
 import com.feelingm.firebasetest.util.navigation.NavigationManager
 import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*

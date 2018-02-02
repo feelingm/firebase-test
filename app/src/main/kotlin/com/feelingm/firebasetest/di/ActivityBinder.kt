@@ -1,11 +1,11 @@
 package com.feelingm.firebasetest.di
 
-import com.feelingm.firebasetest.MainActivity
-import com.feelingm.firebasetest.MainFragment
+import com.feelingm.firebasetest.ui.main.MainActivity
+import com.feelingm.firebasetest.ui.main.MainFragment
 import com.feelingm.firebasetest.di.ui.GoogleSignInModule
 import com.feelingm.firebasetest.ui.auth.GoogleSignInFragment
-import com.feelingm.firebasetest.util.base.BaseActivity
-import com.feelingm.firebasetest.util.base.BaseFragment
+import com.feelingm.firebasetest.util.component.BaseActivity
+import com.feelingm.firebasetest.util.component.BaseFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

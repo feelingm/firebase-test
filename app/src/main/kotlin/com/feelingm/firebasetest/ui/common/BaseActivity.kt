@@ -1,4 +1,4 @@
-package com.feelingm.firebasetest.util.component
+package com.feelingm.firebasetest.ui.common
 
 import android.os.Bundle
 import com.feelingm.firebasetest.util.navigation.NavigationManager

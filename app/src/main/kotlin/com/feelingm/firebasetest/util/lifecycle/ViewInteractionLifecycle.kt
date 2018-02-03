@@ -7,8 +7,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.DialogFragment
 import android.support.v4.app.Fragment
-import com.feelingm.firebasetest.util.component.BaseActivity
-import com.feelingm.firebasetest.util.component.BaseFragment
+import com.feelingm.firebasetest.ui.common.BaseActivity
+import com.feelingm.firebasetest.ui.common.BaseFragment
 import com.feelingm.firebasetest.util.databinding.BaseObservableViewModel
 import com.feelingm.firebasetest.util.databinding.ViewInteractionListener
 

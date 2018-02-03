@@ -6,7 +6,7 @@ import android.view.Menu
 import android.view.MenuItem
 import com.feelingm.firebasetest.R
 import com.feelingm.firebasetest.ui.auth.GoogleSignInFragment
-import com.feelingm.firebasetest.util.component.BaseActivity
+import com.feelingm.firebasetest.ui.common.BaseActivity
 import com.feelingm.firebasetest.util.navigation.NavigationManager
 
 import kotlinx.android.synthetic.main.activity_main.*

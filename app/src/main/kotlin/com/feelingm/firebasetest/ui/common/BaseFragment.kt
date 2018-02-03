@@ -1,4 +1,4 @@
-package com.feelingm.firebasetest.util.component
+package com.feelingm.firebasetest.ui.common
 
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider

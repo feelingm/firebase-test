@@ -4,8 +4,8 @@ import com.feelingm.firebasetest.ui.main.MainActivity
 import com.feelingm.firebasetest.ui.main.MainFragment
 import com.feelingm.firebasetest.di.ui.GoogleSignInModule
 import com.feelingm.firebasetest.ui.auth.GoogleSignInFragment
-import com.feelingm.firebasetest.util.component.BaseActivity
-import com.feelingm.firebasetest.util.component.BaseFragment
+import com.feelingm.firebasetest.ui.common.BaseActivity
+import com.feelingm.firebasetest.ui.common.BaseFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

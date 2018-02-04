@@ -30,9 +30,8 @@ class GoogleSignInFragment : BaseFragment() {
         }.root
     }
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         sign_in_button.setOnClickListener {
             viewModel.signIn()
         }

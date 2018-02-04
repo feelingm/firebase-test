@@ -24,19 +24,19 @@ abstract class BaseObservableViewModel(app: Application)
     }
 
     fun startActivity(intent: Intent, options: Bundle? = null) =
-        viewInteractionListener?.requestStartActivity(intent, options)
+        viewInteractionListener?.startActivity(intent, options)
                 ?: IllegalStateException("ViewInteractionListener is null")
 
     fun startActivityForResult(intent: Intent, requestCode: Int, options: Bundle? = null) =
-        viewInteractionListener?.requestStartActivityForResult(intent, requestCode, options)
+        viewInteractionListener?.startActivityForResult(intent, requestCode, options)
                 ?: IllegalStateException("ViewInteractionListener is null")
 
 
     fun replaceFragment(fragment: Fragment, openAsRoot: Boolean) =
-        viewInteractionListener?.requestReplaceFragment(fragment, openAsRoot)
+        viewInteractionListener?.replaceFragment(fragment, openAsRoot)
                 ?: IllegalStateException("ViewInteractionListener is null")
 
     fun showDialogFragment(fragment: DialogFragment) =
-        viewInteractionListener?.requestShowDialogFragment(fragment)
+        viewInteractionListener?.showDialogFragment(fragment)
                 ?: IllegalStateException("ViewInteractionListener is null")
 }

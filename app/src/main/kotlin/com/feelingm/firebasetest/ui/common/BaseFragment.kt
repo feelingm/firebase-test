@@ -49,7 +49,7 @@ abstract class BaseFragment : DaggerFragment() {
         lifecycle += viewDisposables
     }
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         initActionBar(true, getString(R.string.app_name))

@@ -17,7 +17,7 @@ ext {
     androidPluginVersion = '3.0.1'
 
     // Library
-    ankoVersion = '0.10.3'
+    ankoVersion = '0.10.4'
     archComponentVersion = '1.0.0'
     glideVersion = '4.1.1'
     gsonVersion = '2.7'
@@ -62,6 +62,10 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+        debug {
+            signingConfig signingConfigs.config
         }
     }
     sourceSets {
@@ -75,11 +79,10 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    implementation 'com.android.support:customtabs:26.1.0'
+    implementation "com.android.support:customtabs:$supportLibVersion"
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-
     implementation "android.arch.lifecycle:extensions:$archComponentVersion"
     implementation "android.arch.persistence.room:runtime:$archComponentVersion"
     implementation "android.arch.persistence.room:rxjava2:$archComponentVersion"
@@ -101,18 +104,19 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
     implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
     implementation "org.jetbrains.anko:anko-commons:$ankoVersion"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+    implementation "org.jetbrains.anko:anko-design:$ankoVersion"
 
+    // For SnackBars
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+    implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
     kapt "android.arch.lifecycle:compiler:$archComponentVersion"
     kapt "android.arch.persistence.room:compiler:$archComponentVersion"
     kapt "com.github.bumptech.glide:compiler:$glideVersion"
     kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
     kapt "com.google.dagger:dagger-compiler:$daggerVersion"
-
     implementation 'com.google.firebase:firebase-core:11.6.2'
     implementation 'com.google.firebase:firebase-auth:11.6.2'
     implementation 'com.google.android.gms:play-services-auth:11.6.2'
-
     kapt 'com.android.databinding:compiler:3.1.0-alpha09'
     kapt 'android.arch.lifecycle:compiler:1.1.0'
 }

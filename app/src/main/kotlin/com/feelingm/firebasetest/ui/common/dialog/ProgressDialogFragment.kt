@@ -53,9 +53,9 @@ class ProgressDialogFragment : DialogFragment() {
                 .title(R.string.progress_dialog_title)
                 .content(R.string.progress_dialog_content)
                 .progress(indeterminate, max, showMinMax)
-                .show()
+                .build()
 
-        return super.onCreateDialog(savedInstanceState)
+        return dialog
     }
 
 

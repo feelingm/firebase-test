@@ -37,7 +37,7 @@ class GoogleSignInViewModel(val firebaseAuth: FirebaseAuth,
     private val progressBar = ProgressDialogFragment.newInstance(indeterminate = true)
 
     fun updateUser(user: FirebaseUser? = null) {
-        progressBar.dismiss()
+        hideDialog(progressBar)
 
         if (user != null) {
             statusText.postValue(app.getString(R.string.google_status_fmt, user.email))
@@ -89,7 +89,7 @@ class GoogleSignInViewModel(val firebaseAuth: FirebaseAuth,
 
     private fun firebasethWithGoogle(account: GoogleSignInAccount) {
 
-        showDialogFragment(progressBar)
+        showDialog(progressBar)
 
         val credential = GoogleAuthProvider.getCredential(account.idToken, null)
         firebaseAuth.signInWithCredential(credential)
@@ -101,7 +101,7 @@ class GoogleSignInViewModel(val firebaseAuth: FirebaseAuth,
                         updateUser()
                     }
 
-                    progressBar.dismiss()
+                    hideDialog(progressBar)
                 }
 
     }

@@ -14,7 +14,6 @@ import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
-import org.jetbrains.anko.design.snackbar
 
 /**
  * Created by mac on 2018. 1. 23..

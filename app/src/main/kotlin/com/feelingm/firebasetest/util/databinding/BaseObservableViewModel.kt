@@ -27,6 +27,8 @@ abstract class BaseObservableViewModel(app: Application)
 
     val requestToast = PublishSubject.create<ToastDto>()
 
+    val requestEvent = PublishSubject.create<EventDto>()
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 
     }
@@ -64,5 +66,9 @@ abstract class BaseObservableViewModel(app: Application)
 
     fun showToast(text: String, showLong: Boolean = false, tag: String? = null) {
         requestToast.onNext(ToastDto(text, showLong, tag))
+    }
+
+    fun sendEvent(tag: String? = null, intData: Int? = null) {
+        requestEvent.onNext(EventDto(tag, intData))
     }
 }

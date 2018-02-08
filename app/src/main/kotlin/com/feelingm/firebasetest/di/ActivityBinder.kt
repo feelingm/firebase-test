@@ -3,6 +3,7 @@ package com.feelingm.firebasetest.di
 import com.feelingm.firebasetest.ui.main.MainActivity
 import com.feelingm.firebasetest.ui.main.MainFragment
 import com.feelingm.firebasetest.di.ui.GoogleSignInModule
+import com.feelingm.firebasetest.di.ui.GoogleTaskModule
 import com.feelingm.firebasetest.ui.auth.GoogleSignInFragment
 import com.feelingm.firebasetest.ui.common.BaseActivity
 import com.feelingm.firebasetest.ui.common.BaseFragment
@@ -28,6 +29,6 @@ abstract class ActivityBinder {
     @ContributesAndroidInjector
     abstract fun bindMainFragment(): MainFragment
 
-    @ContributesAndroidInjector(modules = [ GoogleSignInModule::class ])
+    @ContributesAndroidInjector(modules = [ GoogleSignInModule::class, GoogleTaskModule::class ])
     abstract fun bindGoogleSignInFragment(): GoogleSignInFragment
 }

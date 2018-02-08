@@ -49,11 +49,11 @@ abstract class BaseFragment : DaggerFragment(), ViewInteractionListener {
                                 if (dto.requestCode > 0) {
                                     if (!requestStartActivityForResult(dto.intent, dto.requestCode,
                                                     dto.options, dto.tag)) {
-                                        startActivityForResult(dto.intent, dto.requestCode, dto.options)
+                                        this@BaseFragment.startActivityForResult(dto.intent, dto.requestCode, dto.options)
                                     }
                                 } else {
                                     if (!requestStartActivity(dto.intent, dto.options, dto.tag)) {
-                                        startActivity(dto.intent, dto.options)
+                                        this@BaseFragment.startActivity(dto.intent, dto.options)
                                     }
                                 }
                             }
@@ -96,6 +96,11 @@ abstract class BaseFragment : DaggerFragment(), ViewInteractionListener {
                                     Toast.makeText(context, dto.text,
                                             if (dto.showLong) Toast.LENGTH_LONG else Toast.LENGTH_SHORT).show()
                                 }
+                            }
+
+                    disposables += requestEvent.subscribeOn(AndroidSchedulers.mainThread())
+                            .subscribe { dto ->
+                                requestSendEvent(dto.tag, dto.intData)
                             }
                 }
 
@@ -156,4 +161,6 @@ abstract class BaseFragment : DaggerFragment(), ViewInteractionListener {
     override fun requestShowSnackbar(text: String, showLong: Boolean, tag: String?): Boolean = false
 
     override fun requestShowToast(text: String, showLong: Boolean, tag: String?): Boolean = false
+
+    override fun requestSendEvent(tag: String?, intData: Int?): Boolean = false
 }

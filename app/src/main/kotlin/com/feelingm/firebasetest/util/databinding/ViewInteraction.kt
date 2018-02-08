@@ -31,6 +31,9 @@ open class ToastDto(val text: String,
                     val showLong: Boolean = false,
                     val tag: String? = null)
 
+open class EventDto(val tag: String? = null,
+                    val intData: Int? = null)
+
 interface ViewInteractionListener {
 
     fun requestStartActivity(intent: Intent, options: Bundle? = null, tag: String? = null): Boolean
@@ -46,4 +49,6 @@ interface ViewInteractionListener {
     fun requestShowSnackbar(text: String, showLong: Boolean = false, tag: String? = null): Boolean
 
     fun requestShowToast(text: String, showLong: Boolean = false, tag: String? = null): Boolean
+
+    fun requestSendEvent(tag: String? = null, intData: Int? = null): Boolean
 }

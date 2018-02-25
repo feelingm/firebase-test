@@ -55,6 +55,7 @@ android {
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         signingConfig signingConfigs.config
     }
@@ -117,8 +118,20 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:11.6.2'
     implementation 'com.google.firebase:firebase-auth:11.6.2'
     implementation 'com.google.android.gms:play-services-auth:11.6.2'
+
+    compile 'pub.devrel:easypermissions:0.3.0'
+    compile('com.google.api-client:google-api-client-android:1.23.0') {
+        exclude group: 'org.apache.httpcomponents'
+    }
+    compile('com.google.apis:google-api-services-tasks:v1-rev49-1.23.0') {
+        exclude group: 'org.apache.httpcomponents'
+    }
+
     kapt 'com.android.databinding:compiler:3.1.0-alpha09'
     kapt 'android.arch.lifecycle:compiler:1.1.0'
+
+
+    implementation 'com.android.support:multidex:1.0.1'
 }
 
 apply plugin: 'com.google.gms.google-services'

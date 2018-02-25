@@ -19,7 +19,10 @@ import javax.inject.Singleton
         AppModule::class,
         AndroidInjectionModule::class,
         FirebaseAuthModule::class,
-        NavigationModule::class
+        NavigationModule::class,
+        DatabaseModule::class,
+        GoogleClientApiModule::class,
+        GoogleTaskModule::class
         ])
 interface AppComponent : AndroidInjector<FirebaseTestApp> {
 

@@ -36,5 +36,8 @@ class GoogleTaskViewModel(val firebaseAuth: FirebaseAuth,
 
     private val progressBar = ProgressDialogFragment.newInstance(indeterminate = true)
 
+//    fun onSignOutButtonClicked(view: View) {
+//
+//    }
 
 }
